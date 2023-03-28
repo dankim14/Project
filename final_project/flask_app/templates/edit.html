@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Edit Course</title>
+</head>
+
+
+<body>
+
+        <div class="top portion col-8 mx-auto">
+            <div class="nav">
+                <h1 class="nav-title">Welcome</h1>
+                <ul class="nav-links">
+                    <li>
+                        <a href="/home">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Messages</a>
+                    </li>
+                    <li>
+                        <a href="#">Add Course</a>
+                    </li>
+                    <li>
+                        <a href="#">Course Catalog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="top portion col-8 mx-auto">
+        <form action="/update/show" method="post">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="error">{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" name="name" class="form-control" id="name" placeholder="name" value="{{edit.name}}">
+            </div>
+            <div class="form-group">
+                <label for="quarter">Quarter:</label>
+                <input type="text" name="quarter" class="form-control" id="quarter">
+            </div>
+            <div class="form-group">
+                <label for="building">Building:</label>
+                <input type="building" name="building" class="form-control" id="building">
+            </div>
+            <div class="form-group">
+                <label for="ta">TA:</label>
+                <input type="ta" name="ta" class="form-control" id="ta">
+            </div>
+                <input type="hidden" name="id" value="{{edit.id}}">
+
+                <input type="submit" class="form-control" value="Submit">
+            </div>
+            </div>
+        </form>
+    </div>
+</body>

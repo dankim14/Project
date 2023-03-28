@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>courses</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="top portion col-8 mx-auto">
+        <div class="nav">
+            <h1 class="nav-title">Welcome</h1>
+            <ul class="nav-links">
+                <li>
+                    <a href="/home">Home</a>
+                </li>
+                <li>
+                    <a href="/contact">Contact</a>
+                </li>
+                <li>
+                    <a href="/new/course">Add Course</a>
+                </li>
+                <li>
+                    <a href="/catalog">Course Catalog</a>
+                </li>
+                <li>
+                    <a href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-2">
+                <div class="user-card">
+                    <div class="card-header">
+                        <image src="{{ url_for('static', filename='images/user-circle.png')}}" class="avatar-m">
+                        
+                        <!-- <img src="images/user-circle.png" alt="profile pic" class="avatar-m"> -->
+                    </div>
+                    <div class="card-body">
+                        <h1>{{professor.first_name}}</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <h1> Your courses: </h1>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Course Name</th>
+                            <th>Quarter</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tbody>
+                            {% for course in courses %}
+                                <tr>
+                                    <td>{{course.name}}</td>
+                                    <td>{{course.quarter}}</td>
+                                    <td>
+                                        <a href="/course/{{course.id}}">show</a>
+                                        <a href="/edit/course/{{course.id}}">| edit |</a>
+                                        <a href="/delete/course/{{course.id}}">delete</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+            </div>
+        </div>
+        <script>
+            function alertMessage() {
+    alert("Remember to register all courses by April 4th 12:00am!");
+}
+
+setTimeout(alertMessage, 10000);
+        </script>
+    </div>
+    
+</body>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+
+<div class="top portion col-8 mx-auto">
+    <div class="nav">
+        <h1 class="nav-title">Welcome</h1>
+        <ul class="nav-links">
+            <li>
+                <a href="/home">Home</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+            <li>
+                <a href="/new/course">Add Course</a>
+            </li>
+            <li>
+                <a href="/catalog">Course Catalog</a>
+            </li>
+            <li>
+                <a href="/logout">Logout</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <div class="row-2">
+
+        <h1>University Contact Information</h1>
+
+        <h2> Name: Stanford University</h2>
+
+        <h2> Address: 450 Serra Mall, Stanford, CA 94305</h2>
+
+        <h2> Phone: 650 723-2300</h2>
+
+        <h2> Map: </h2>
+
+        <div id="map"></div>
+        <script>
+            function initMap() {
+                var location = {lat: 37.427475, lng: -122.169716};
+                var map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 4,
+                    center:location
+                });
+                var marker = new google.maps.Marker({
+                    position: location,
+                    map: map
+                });
+            }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7QvFVWGw1nFRBDIBHlQXlKNX2eXntX3E&callback=initMap"></script>
+        
+</div>

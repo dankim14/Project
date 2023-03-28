@@ -1,0 +1,141 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3f3f3;
+}
+
+* {
+    padding: 0;
+}
+
+.top-portion {
+    background-color: #333333;
+}
+.nav {
+    background-color: #333333;
+    color: #ffffff;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    justify-content: space-around
+}
+
+.nav a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-title {
+    margin-left: 20px;
+}
+
+.btn {
+    height: 35px;
+    background-color: #17a2b8;
+    color: #ffffff;
+    border: none;
+    font-size: 16px;
+    box-shadow: 5px 5px #000000;
+}
+
+.container {
+    width: 1000px;
+    margin:  0 auto;
+
+}
+
+/* columns */
+
+.row {
+    display: flex;
+}
+
+.col-1, .col-2 {
+    margin: 10px;
+    padding: 10px;
+    flex: 1;
+}
+
+.col-2 {
+    flex:2;
+}
+
+.user-card, .card {
+    width: 100%;
+    background-color: #fff;
+    border: 2px solid #999;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    overflow: hidden
+}
+
+.card-header {
+    background-color: #17a2b8;
+    height: 125px;
+    margin-bottom: 70px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card_body h1,
+.card-body h2,
+.card-body h3,
+.card-body p {
+    margin: 20px 0px;
+}
+
+.avatar-m {
+    border-radius: 50%;
+    background-color: #fff;
+    height: 120px;
+    padding: 5px;
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-left: -10px;
+}
+
+.icon-s {
+    height: 20px;
+}
+
+.todd-avatar {
+    border-radius: 50%;
+    height: 45px;
+    margin-right: 10px;
+}
+
+.header {
+    padding: 10px;
+    background-color: #333333;
+    color: white;
+}
+
+.user-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+}
+
+.beg, .end {
+    font-size: 24px;
+    align-items: center;
+    display: flex;
+}
+
+#map {
+    height: 500px;
+    width: 75%;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="top portion col-8 mx-auto">
+        <div class="nav">
+            <h1 class="nav-title">Welcome</h1>
+            <ul class="nav-links">
+                <li>
+                    <a href="/home">Home</a>
+                </li>
+                <li>
+                    <a href="contact">Contact</a>
+                </li>
+                <li>
+                    <a href="/new/course">Add Course</a>
+                </li>
+                <li>
+                    <a href="/catalog">Course Catalog</a>
+                </li>
+                <li>
+                    <a href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="card col-10 mx-auto my-5 bg-light text-dark">
+        <div class="card-body">
+            <h2 class="card-title text-primary">{{course.name}}</h2>
+            <p class="card-text"> Quarter: {{course.quarter}}</p>
+            <p class="card-text"> Building: {{course.building}}</p>
+            <p class="card-text">Ta:  {{course.ta}}</p>
+            <p class="card_text"> Taught By: {{professor.first_name}}</p>
+        </div>
+    </div>
+</body>
+</html>
